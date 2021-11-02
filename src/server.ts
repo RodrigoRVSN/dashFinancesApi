@@ -5,7 +5,6 @@ import { cors } from "./middlewares/cors";
 import { routes } from "./routes";
 
 const PORT = process.env.PORT || 3333;
-const infoPort = PORT === 3333 && "http://localhost:3333";
 
 const app = express();
 app.use(express.json());
@@ -14,4 +13,4 @@ app.use(routes);
 
 app.get("/", (req, res) => res.send("oi"));
 
-app.listen(PORT, () => console.log(`🔥 Running in ${infoPort}`));
+app.listen(PORT, () => console.log(`🔥 Running in http://localhost:${PORT}`));
