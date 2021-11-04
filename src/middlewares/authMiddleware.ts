@@ -16,7 +16,7 @@ export default function authMiddleware(req, res, next) {
   const [, token] = authorization.split(" ");
 
   try {
-    const data = jwt.verify(token, "supersecretsomuchsecret");
+    const data = jwt.verify(token, process.env.jwtSecret);
 
     const { sub } = data as ITokenPayload;
 
