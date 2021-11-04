@@ -16,7 +16,7 @@ class FinancesControllerClass {
       userToken,
     });
 
-    return res.json(finance);
+    return res.status(201).json(finance);
   }
 
   async show(req, res) {
