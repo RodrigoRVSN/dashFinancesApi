@@ -27,7 +27,7 @@ class UserControllerClass {
       email,
     )) as unknown as User;
 
-    if (!userExists) {
+    if (userExists) {
       return res.status(400).json({ error: "Usuário já existe!" });
     }
 
